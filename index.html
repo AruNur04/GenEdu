@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GenEdu - Басты бет</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: 'Nunito', 'Segoe UI', Verdana, sans-serif;
+      background: #f9fbfd;
+      margin: 0;
+      padding: 0;
+    }
+
+    header, footer {
+      background-color: #004d7a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      animation: fadeInDown 1s ease-in-out both;
+    }
+
+    nav {
+      text-align: center;
+      background: #e8f0fe;
+      padding: 10px;
+      animation: fadeIn 1.2s ease-in-out both;
+    }
+
+    nav a {
+      margin: 10px;
+      padding: 10px 20px;
+      text-decoration: none;
+      background: white;
+      border-radius: 8px;
+      color: #007b8a;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s ease;
+      transform: scale(1);
+    }
+
+    nav a:hover {
+      background: #e0f7fa;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 40px;
+      text-align: center;
+      animation: fadeInUp 1.4s ease-in-out both;
+    }
+
+    main h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      animation: fadeInUp 1.2s ease-in-out both;
+      animation-delay: 0.2s;
+    }
+
+    main p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      animation: fadeInUp 1.2s ease-in-out both;
+      animation-delay: 0.5s;
+    }
+
+    footer {
+      font-size: 0.9em;
+    }
+
+    /* Анимациялар */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🧬GenEdu</h1>
+    <p>Тұқымқуалаушылық пен өзгергіштік бөлімін оқытуға арналған - сандық оқыту платформасы</p>
+  </header>
+
+  <nav>
+    <a href="theory.html">📘 Теориялық мәлімет</a>
+    <a href="tasks.html">🧪 Есептер</a>
+    <a href="tests.html">📊 Тест</a>
+    <a href="lab.html">🔬 Зертханалық жұмыс</a>
+    <a href="teachers.html">👩‍🏫 Мұғалімдерге</a>
+  </nav>
+
+  <main>
+    <h2>Қош келдіңіз!</h2>
+    <p>
+      Білімді сандық түрде меңгеруге арналған GenEdu платформасына қош келдіңіз.<br>
+      Жоғарыдағы бөлімдер арқылы өзіңізге қажетті материалды таңдаңыз.
+    </p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GenEdu платформасы. Барлық құқықтар қорғалған.</p>
+  </footer>
+</body>
+</html>
