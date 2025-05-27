@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>📊 Тест – GenEdu</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    header, footer { background-color: #007b8a; color: white; text-align: center; padding: 20px; }
+    nav { text-align: center; background: #00a8b5; padding: 10px; }
+    nav a {
+      margin: 10px; padding: 10px 20px; text-decoration: none; background: white;
+      border-radius: 8px; color: #007b8a; font-weight: bold; display: inline-block;
+    }
+    nav a:hover { background: #e0f7fa; }
+    main { padding: 40px; max-width: 800px; margin: auto; background: white; border-radius: 10px; }
+
+    .question { margin-bottom: 20px; text-align: left; }
+    .question strong { color: #007b8a; }
+    .answers label { display: block; margin-left: 20px; cursor: pointer; }
+    .result { margin-top: 20px; font-weight: bold; color: green; }
+    select, button {
+      padding: 8px 16px; font-size: 16px;
+      background: #007b8a; color: white; border: none; border-radius: 6px; cursor: pointer;
+      margin-bottom: 20px;
+    }
+    button:hover { background: #005f6b; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📊 Тест</h1>
+    <p>Тұқымқуалаушылық және өзгергіштік бөлімі бойынша</p>
+  </header>
+  <nav>
+    <a href="GenEdu_Site.html"> Басты бет</a>
+    <a href="theory.html">📘 Теориялық мәлімет</a>
+    <a href="tasks.html">🧪 Есептер</a>
+    <a href="tests.html">📊 Тест</a>
+    <a href="lab.html">🔬 Зертханалық жұмыс</a>
+    <a href="teachers.html">👩‍🏫 Мұғалімдерге</a>
+  </nav>
+
+  <main>
+    <h2>Тест нұсқасын таңдаңыз</h2>
+    <label for="version">Нұсқа:</label>
+    <select id="version" onchange="loadTest()">
+      <option value="1">Нұсқа 1</option>
+      <option value="2">Нұсқа 2</option>
+      <option value="3">Нұсқа 3</option>
+      <option value="4">Нұсқа 4</option>
+      <option value="5">Нұсқа 5</option>
+      <option value="6">Нұсқа 6</option>
+      <option value="7">Нұсқа 7</option>
+      <option value="8">Нұсқа 8</option>
+      <option value="9">Нұсқа 9</option>
+      <option value="10">Нұсқа 10</option>
+    </select>
+
+    <form id="testForm"></form>
+    <button onclick="submitTest()">Нәтижені көру</button>
+    <div class="result" id="result"></div>
+  </main>
+
+  <footer>
+    <p>&copy; Аблай Аружан Қайратқызы.2025 GenEdu платформасы. Барлық құқықтар қорғалған.</p>
+  </footer>
+  <script src="testData_10_versions_combined.js"></script>
+      
+</body>
+</html>

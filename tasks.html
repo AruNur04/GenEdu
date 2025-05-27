@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <title>🧪 Тапсырмалар жинағы - GenEdu</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+    header, footer { background-color: #007b8a; color: white; text-align: center; padding: 20px; }
+    nav { text-align: center; background: #00a8b5; padding: 10px; }
+    nav a {
+      margin: 10px; padding: 10px 20px; text-decoration: none; background: white;
+      border-radius: 8px; color: #007b8a; font-weight: bold; display: inline-block;
+    }
+    nav a:hover { background: #e0f7fa; }
+    main { padding: 20px; max-width: 800px; margin: auto; }
+    .task { background: white; border-radius: 10px; padding: 20px; margin: 20px 0; box-shadow: 0 0 5px rgba(0,0,0,0.1); }
+    input[type="text"] { padding: 10px; width: 100%; margin-top: 10px; border-radius: 5px; border: 1px solid #aaa; }
+    button { margin-top: 10px; padding: 10px 20px; background: #007b8a; color: white; border: none; border-radius: 8px; cursor: pointer; }
+    .result { margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🧬 GenEdu</h1>
+    <p>Тапсырмалар жинағы (8 есеп)</p>
+  </header>
+
+  <nav>
+    <a href="GenEdu_Site.html">Басты бет</a>
+    <a href="theory.html">📘 Теориялық мәлімет</a>
+    <a href="tasks.html">🧪 Есептер</a>
+    <a href="tests.html">📊 Тест</a>
+    <a href="lab.html">🔬 Зертханалық жұмыс</a>
+  </nav>
+
+  <main>
+    <div class="task">
+      <h3>1. АА × аа будандастыру нәтижесі</h3>
+      <p>F1 ұрпағындағы генотип қандай?</p>
+      <input type="text" id="answer1" placeholder="Мысалы: 100% Aa">
+      <button onclick="checkAnswer('answer1', ['100% Aa', '100% Aa - доминантты'])">Тексеру</button>
+      <div id="result1" class="result"></div>
+    </div>
+
+    <div class="task">
+      <h3>2. Аа × Аа будандастыру нәтижесі</h3>
+      <p>Фенотиптік қатынасын көрсетіңіз.</p>
+      <input type="text" id="answer2" placeholder="Жауабы:">
+      <button onclick="checkAnswer('answer2', ['3:1', '3 : 1'])">Тексеру</button>
+      <div id="result2" class="result"></div>
+    </div>
+
+    <div class="task">
+      <h3>3. Аа × аа будандастыру </h3>
+      <p>Фенотиптік қатынасы қандай?</p>
+      <input type="text" id="answer3" placeholder="Жауабы: ">
+      <button onclick="checkAnswer('answer3', ['1:1', '1 : 1'])">Тексеру</button>
+      <div id="result3" class="result"></div>
+    </div>
+
+    <div class="task">
+      <h3>4. Дигибридті будандастыру AaBb × AaBb</h3>
+      <p>F2 ұрпағындағы фенотиптік қатынас қандай?</p>
+      <input type="text" id="answer4" placeholder="Жауабы: ">
+      <button onclick="checkAnswer('answer4', ['9:3:3:1', '9 : 3 : 3 : 1'])">Тексеру</button>
+      <div id="result4" class="result"></div>
+    </div>
+
+    <div class="task">
+      <h3>5. Толымсыз доминанттылық: RR × WW</h3>
+      <p>F1 ұрпақ қандай фенотипке ие болады?</p>
+      <input type="text" id="answer5" placeholder="Жауабы: ">
+      <button onclick="checkAnswer('answer5', ['қызғылт'])">Тексеру</button>
+      <div id="result5" class="result"></div>
+    </div>
+
+    <div class="task">
+      <h3>6. Аа × Аа будандастыру</h3>
+      <p>Генотиптік қатынас қандай?</p>
+      <input type="text" id="answer6" placeholder="Жауабы:">
+      <button onclick="checkAnswer('answer6', ['1:2:1', '1 : 2 : 1'])">Тексеру</button>
+      <div id="result6" class="result"></div>
+    </div>
+
+    <div class="task">
+      <h3>7. Эпистаз мысалы</h3>
+      <p>Екі ген өзара әрекеттесіп, фенотипті 9:7 қатынасында көрсетеді. Бұл қандай құбылыс?</p>
+      <input type="text" id="answer7" placeholder="Жауабы:">
+      <button onclick="checkAnswer('answer7', ['эпистаз'])">Тексеру</button>
+      <div id="result7" class="result"></div>
+    </div>
+
+    <div class="task">
+      <h3>8. Генотип және фенотип айырмашылығы</h3>
+      <p>“Генотип” сөзі нені білдіреді?</p>
+      <input type="text" id="answer8" placeholder="Жауабы: ">
+      <button onclick="checkAnswer('answer8', ['ағзаның гендік құрамы', 'организмнің генетикалық құрылымы'])">Тексеру</button>
+      <div id="result8" class="result"></div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GenEdu платформасы. Барлық құқықтар қорғалған.</p>
+  </footer>
+
+  <script>
+    function checkAnswer(inputId, correctAnswers) {
+      const userInput = document.getElementById(inputId).value.trim().toLowerCase();
+      const resultDiv = document.getElementById("result" + inputId.slice(-1));
+      const normalizedInput = userInput.replace(/\s+/g, '');
+      const normalizedCorrects = correctAnswers.map(ans => ans.toLowerCase().replace(/\s+/g, ''));
+      if (normalizedCorrects.includes(normalizedInput)) {
+        resultDiv.style.color = "green";
+        resultDiv.textContent = "✅ Дұрыс!";
+      } else {
+        resultDiv.style.color = "red";
+        resultDiv.textContent = "❌ Қате, тағы да ойланыңыз.";
+      }
+    }
+  </script>
+</body>
+</html>
+
+  <footer>
+    <p>&copy; Аблай Аружан Қайратқызы. 2025 GenEdu. Барлық құқықтар қорғалған.</p>
+  </footer>
+
+</body>
+</html>
